@@ -1,0 +1,313 @@
+﻿@using WarapornSalapao.Resources;
+
+<div class="banner-box" id="banner-box" bannerId="1">
+    <div class="banner-placeholder">
+        <img src="~/images/Home/loading.gif" />
+    </div>
+    <div v-for="item in banner">
+        <div class="banner lazy-bg-img" v-bind:style="{'background-image':'url(\''+item.imgUrl+'\')'}" :title="item.altTag"></div>
+    </div>
+</div>
+
+<div class="content-box">
+    <div class="header-box">@SharedResource.GetValue("profile-header")</div>
+    <div class="row no-gutters">
+        <div class="col-md-6 content-desc flex-mobile">
+            <p class="m-0 content-text">@SharedResource.GetValue("profile-desc")</p>
+        </div>
+        <div class="col-md-6 content-img">
+            <h1 class="content-header mt-0">FROM ORIGINAL<br />FAMILY RECIPES</h1>
+            <img src="~/images/Home/ครอบครัว-01.png" class="w-100" alt="family-recipe" />
+        </div>
+    </div>
+
+    <div class="p-3">
+        <div class="bg-white-trans">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="img-home">
+                        <div class="img-section opacity-5" id="img-section-1" title="@SharedResource.GetValue("section-header-1")"></div>
+                    </div>
+                    <div class="content-img">
+                        <h2 class="section-header">@SharedResource.GetValue("section-header-1")</h2>
+                        <p class="section-desc">
+                            @SharedResource.GetValue("section-desc-1")
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4" v-for="item in sections">
+                    <div class="img-home">
+                        <div class="img-section opacity-5" id="img-section-2" title="@SharedResource.GetValue("section-header-2")"></div>
+                    </div>
+                    <div class="content-img">
+                        <h2 class="section-header">@SharedResource.GetValue("section-header-2")</h2>
+                        <p class="section-desc">
+                            @SharedResource.GetValue("section-desc-2")
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4" v-for="item in sections">
+                    <div class="img-home">
+                        <div class="img-section opacity-5" id="img-section-3" title="@SharedResource.GetValue("section-header-3")"></div>
+                    </div>
+                    <div class="content-img">
+                        <h2 class="section-header">@SharedResource.GetValue("section-header-3")</h2>
+                        <p class="section-desc">
+                            @SharedResource.GetValue("section-desc-3")
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="news-main-box">
+        <div class="header-box">@SharedResource.GetValue("news")</div>
+        <div class="news-box" id="news-box">
+            <div v-for="(item, index) in news">
+                <div class="news-banner" :newsId="`${index}`" v-bind:style="{'background-image':'url(\''+item.imgUrl+'\')'}" :title="item.altTag"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-box">@SharedResource.GetValue("product")</div>
+    <div class="row no-gutters p-sm-3 mb-5" id="category-box">
+        <div class="d-flex flex-wrap flex-sm-wrap justify-content-center w-100 px-3 pt-5 pt-sm-0">
+            <div class="col-6 col-md-3" v-for="(cat, index) in category.slice(1,5)">
+                <a href="/Product" class="text-white product-menu" :menuId="cat.id" @@click="getMenuId(cat.id)" :title="cat.name">
+                    <div class="product-boxs" v-bind:style="{'background-image':'url(\''+cat.imgUrl+'\')'}" :title="cat.altTag"></div>
+                    <p class="text-center product-name pb-3">{{cat.name}}</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="d-flex flex-wrap flex-sm-wrap justify-content-center w-100 product-padding">
+            <div class="col-6 col-md-4" v-for="(cat, index) in category.slice(5,8)">
+                <a href="/Product" class="text-white product-menu" :menuId="cat.id" @@click="getMenuId(cat.id)" :title="cat.name">
+                    <div class="product-boxs" v-bind:style="{'background-image':'url(\''+cat.imgUrl+'\')'}" :title="cat.altTag"></div>
+                    <p class="text-center product-name pb-3">{{cat.name}}</p>
+                </a>
+            </div>
+        </div>
+        <div class="text-center text-sm-right w-100 mt-3 mt-sm-0"><a href="/Product" onclick="Cookies.set('MenuId', 0)" class="text-white see-more-link" title="@SharedResource.GetValue("see-more")">@SharedResource.GetValue("see-more")   </a></div>
+    </div>
+
+    <div class="header-box">@SharedResource.GetValue("menu-service")</div>
+    <div id="service-box">
+        <div class="row no-gutters px-5 pt-5">
+            <div class="col-md-4">
+                <a href="/Service" class="text-white link-more">
+                    <div class="service-box" title="@SharedResource.GetValue("delivery")" id="service-1"></div>
+                    <p class="text-center product-name">@SharedResource.GetValue("delivery")</p>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="/Service/#snackboxs" class="text-white link-more">
+                    <div class="service-box" title="@SharedResource.GetValue("snackbox")" id="service-2"></div>
+                    <p class="text-center product-name">@SharedResource.GetValue("snackbox")</p>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="/Service/#catering" class="text-white link-more">
+                    <div class="service-box" title="@SharedResource.GetValue("catering-header")" id="service-3"></div>
+                    <p class="text-center product-name">@SharedResource.GetValue("catering-header")</p>
+                </a>
+            </div>
+        </div>
+        <div class="text-center text-sm-right w-100 p-3 mb-5"><a asp-controller="Service" asp-action="Index" target="_blank" class="text-white see-more-link" title="@SharedResource.GetValue("see-more")">@SharedResource.GetValue("see-more")</a></div>
+    </div>
+
+    <div class="header-box">@SharedResource.GetValue("menu-branch")</div>
+    <div class="row no-gutters" id="result-box">
+        <div class="col-md-6 p-4">
+            <div id="map">
+            </div>
+        </div>
+        <div class="col-md-6 p-4" id="re">
+            <div class="row">
+                <div class="col-md-6 pb-2 pb-md-0">
+                    <select class="form-control" id="province-list">
+                        <option value="0">@SharedResource.GetValue("province")</option>
+                        <option v-for="item in province" :value="item.id">{{item.name}}</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <select class="form-control" id="district-list">
+                        <option value="0">@SharedResource.GetValue("district")</option>
+                        <option v-for="item in district" :value="item.id">{{item.name}}</option>
+                    </select>
+                </div>
+                <div class="col-md-6 pt-2">
+                    <select class="form-control" id="subdistrict-list">
+                        <option value="0">@SharedResource.GetValue("subdistrict")</option>
+                        <option v-for="item in subdistrict" :value="item.id">{{item.name}}</option>
+                    </select>
+                </div>
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-sm-9 col-md-6 pt-2">
+                            <input type="text" placeholder="@SharedResource.GetValue("search")" class="form-control branch-input">
+                        </div>
+                        <button type="button" @@click="getPlaces()" class="branch-search">@SharedResource.GetValue("search")<img src="~/images/search.png" alt="search" class="search-icon ml-2" /></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="result-box my-3 position-relative" id="branch-box">
+                <img src="~/images/Home/loading.gif" id="loading" class="d-none" />
+                <div class="result" v-for="item in places">
+                    <div class="d-flex justify-content-between">
+                        <p class="m-0 w-70">@SharedResource.GetValue("menu-branch") {{item.name}}</p>
+                        <a :href="item.menuImg" target="_blank" class="pl-3 text-white link-menu w-30" title="@SharedResource.GetValue("see-menu")">@SharedResource.GetValue("see-menu")</a>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <p class="w-70">@SharedResource.GetValue("tel") {{item.telephone}} @SharedResource.GetValue("opening-hours") {{item.timeService}} @SharedResource.GetValue("time")</p>
+                        <a :href="item.googleMap" target="_blank" class="pl-3 text-white link-menu w-30" title="@SharedResource.GetValue("see-map")">@SharedResource.GetValue("see-map")</a>
+                    </div>
+                </div>
+                <p class="text-center text-danger not-found d-none">ไม่พบข้อมูล</p>
+            </div>
+        </div>
+        <div class="text-center text-sm-right w-100 p-3 mb-5"><a asp-controller="Branch" asp-action="Index" target="_blank" class="text-white see-more-link" title="@SharedResource.GetValue("see-more")">@SharedResource.GetValue("see-more")</a></div>
+    </div>
+
+    <div class="header-box text-uppercase">@SharedResource.GetValue("menu-blog")</div>
+    <div id="blog-box">
+        <div class="row px-5 pt-5 pb-0 pb-md-5 m-0">
+            <div class="col-md-4 pb-5 pb-sm-0" v-for="item in blog">
+                <a :href="'/blog/detail/'+item.urlKey+''" target="_blank" class="text-white link-more">
+                    <div class="service-box" v-bind:style="{'background-image':'url(\''+item.imgUrl+'\')'}" :title="item.name"></div>
+                    <p class="text-center blog-name m-0">{{item.name}}</p>
+                    @*<p class="text-center blog-desc mb-0 mb-md-3">{{item.shortDescription}}</p>
+                        <div class="text-center text-md-right mb-5 mb-md-0 mt-3 mt-md-0">
+                            <a :href="'/blog/detail?id='+item.urlKey+''" target="_blank" class="text-white link-more" title="@SharedResource.GetValue("read-more")">@SharedResource.GetValue("read-more")</a>
+                        </div>*@
+                </a>
+            </div>
+        </div>
+        <div class="text-center text-sm-right w-100 p-3 pb-5"><a asp-controller="Blog" asp-action="Index" target="_blank" class="text-white see-more-link" title="@SharedResource.GetValue("see-more")">@SharedResource.GetValue("see-more")</a></div>
+    </div>
+</div>
+
+<div class="modal fade" tabindex="-1" role="dialog" id="news-modal">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" id="close" data-dismiss="modal" aria-label="Close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body text-center">
+                <div class="modal-img"></div>
+                <div class="modal-txt-box">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $('#home-page').addClass('active');
+            $('.branch-search').click();
+            $('#landing-modal').modal('show');
+        });
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIgb0R5frW6mf7IBjZ92nQBUAG0LKnhdk&callback=initMap" defer></script>
+    <script>
+        var map;
+        var markers = [];
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: 13.812104, lng: 100.56464 },
+                zoom: 10,
+            });
+
+            //infoWindow = new google.maps.InfoWindow;
+
+            //// Try HTML5 geolocation.
+            //if (navigator.geolocation) {
+            //    navigator.geolocation.getCurrentPosition(function (position) {
+            //        var pos = {
+            //            lat: position.coords.latitude,
+            //            lng: position.coords.longitude
+            //        };
+
+            //        var currentMarker = new google.maps.Marker({
+            //            position: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
+            //            map: map
+            //        });
+
+            //        currentMarker.setMap(map);
+            //        map.setCenter(pos);
+
+            //        $.ajax({
+            //            url: apiWeb + '/NearBranchs/' + position.coords.latitude + '/' + position.coords.longitude,
+            //            method: 'GET',
+            //            headers: header,
+            //            success: function (data) {
+            //                addmarker(data.detail);
+            //                console.log(data.detail)
+            //            }
+            //        })
+            //    }, function () {
+            //        handleLocationError(true, infoWindow, map.getCenter());
+            //    });
+            //} else {
+            //    // Browser doesn't support Geolocation
+            //    handleLocationError(false, infoWindow, map.getCenter());
+            //}
+        }
+
+        //function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        //    infoWindow.setPosition(pos);
+        //    infoWindow.setContent(browserHasGeolocation ?
+        //        'Error: The Geolocation service failed.' :
+        //        'Error: Your browser doesn\'t support geolocation.');
+        //    infoWindow.open(map);
+        //}
+
+        function addmarker(location) {
+            var infowindow = new google.maps.InfoWindow();
+
+            var marker, i;
+
+            for (var i = 0; i < markers.length; i++) {
+                markers[i].setMap(null);
+            }
+
+            for (i = 0; i < location.length; i++) {
+                marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(location[i].lat, location[i].long),
+                    map: map
+                });
+
+                google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                    return function () {
+                        infowindow.close();
+                        infowindow.setContent('<div class="infowindow-box">' +
+                            '<h2 class="infowindow-header">สาขา ' + location[i].name + '</h2>' +
+                            '<div class="infowindow-body">' +
+                            '<p class="m-0">' + location[i].address + '</p>' +
+                            '<p class="m-0">โทร. : ' + location[i].telephone + ' เวลาทำการ ' + location[i].timeService + ' น.</p>' +
+                            '<a : href="' + location[i].menuImg + '" target="_blank" class="text-dark link-menu w-30" title="ดูเมนู" >ดูเมนู</a >' +
+                            '</div>' +
+                            '</div>');
+                        infowindow.open(map, marker);
+                    }
+                })(marker, i));
+                markers.push(marker);
+
+                var latLng = new google.maps.LatLng(location[i].lat, location[i].long);
+                map.setCenter(latLng);
+            }
+
+            if (location.length > 0) {
+                marker.setMap(map);
+            }
+        }
+    </script>
+    <script src="~/js/home.js"></script>
+}

@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="float-right">
+    <a class="btn btn-success font-weight-bold" href="/News/CreateUpdate?Id=0">CREATE</a>
+</div>
+<h1 class="font-weight-bold">NEWS</h1>
+
+<div class="data-table border-black bg-white mt-4" id="news">
+    <div class="p-4" id="table-box">
+        <table id="dataTable" class="display nowrap table-border w-100 text-center" tableId="news" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>THUMBNAIL</th>
+                    <th>ALT TAG</th>
+                    <th>SORT ORDER</th>
+                    <th>STATUS</th>
+                    <th>ACTION</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/js/News/NewsIndexScript.js"></script>
+
+}

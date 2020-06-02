@@ -1,0 +1,180 @@
+﻿
+@{
+    ViewData["Title"] = "CreateUpdate";
+}
+
+<h1 class="font-weight-bold header">CREATE / UPDATE BRANCH</h1>
+<span class="d-none banner-name">test</span> @*banner name (update)*@
+
+<div class="data-table border-red bg-white mt-4 ">
+    <div class="p-4 p-sm-5">
+        <form id="myform">
+            <input type="hidden" name="branch-id" id="branchId" value="" />
+            <div class="detail-box">
+                @*<div class="form-group">
+                    <label for="select" class=" form-control-label mb-0 line-h">Status<span class="text-danger">*</span></label>
+                    <div class="d-flex">
+                        <div class="radio col-6">
+                            <input class="status" id="radio-1" name="banner" type="radio" value="1" checked="checked">
+                            <label for="radio-1" class="radio-label">Enable </label>
+                        </div>
+                        <div class="radio col-6">
+                            <input class="status" id="radio-0" name="banner" type="radio" value="0">
+                            <label for="radio-0" class="radio-label">Disabled</label>
+                        </div>
+                    </div>
+                </div>*@
+                <div class="form-group">
+                    <label for="select" class=" form-control-label mb-0 line-h">Menu Image<span class="text-danger">*</span></label>
+                    <div>
+                        <div class="div-file-upload">
+                            <label class="btn btn-secondary mb-0" for="FileImage">
+                                <input class="input-file-upload d-none input-field" id="FileImage" name="fileimage" type="file" accept="image/*" value="">
+                                <canvas id="FileImage-canvas" class="d-none"></canvas>
+                                <span class="font-weight-bold">Choose file</span>
+                            </label>
+
+                            <span class="file-name ml-0 ml-md-3 filename"></span>
+                            <input type="hidden" name="thumbnail" id="thumbnail" class="thumbnail" value="" required />
+                            @*<button type="button" class="btn btn-link btn-delete-file d-none">
+                                    <i class="fa fa-times-circle icon-delete"></i>
+                                </button>*@
+                        </div>
+                        <input type="hidden" name="name" id="pictureImg" value="" />
+                        <div class="preview-upload mt-3 d-none" id="branch-menu-img"></div>
+                        <span class="text-secondary img-condition"><span class="text-danger">*</span>ขนาดไฟล์ต้องไม่เกิน 10 MB และต้องเป็นสกุลไฟล์ .jpg , .jpeg, .png เท่านั้น</span>
+                        <p class="text-danger" id="thumbnail_error"></p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="delivery-branch-box">
+                        <label class="font-weight-bold"><input type="checkbox" name="delivery-branch" id="delivery-branch"> Delivery Branch</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6" id="branch-id-box">
+                        <label for="select" class=" form-control-label mb-0 line-h">Branch Code<span class="text-danger">*</span></label>
+                        <div>
+                            <input class="form-control input-field" id="code" name="code" type="text" value="" required>
+                            <span class="text-danger" id="code_error"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="select" class=" form-control-label mb-0 line-h">Branch Name (TH)<span class="text-danger">*</span></label>
+                        <div>
+                            <input class="form-control input-field" id="name-th" name="name" type="text" value="" required>
+                            <span class="text-danger" id="name_error"></span>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="select" class=" form-control-label mb-0 line-h">Branch Name (EN)</label>
+                        <div>
+                            <input class="form-control input-field" id="name-en" type="text" value="">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="select" class=" form-control-label mb-0 line-h">Address<span class="text-danger">*</span></label>
+                        <div class="summernote-box" id="desc-th">
+                            <textarea rows="4" class="form-control input-field" id="address" name="textarea" required></textarea>
+                            <span class="text-danger" id="textareath_error"></span>
+                        </div>
+                    </div>
+                    @*<div class="form-group col-md-6">
+                            <label for="select" class=" form-control-label mb-0 line-h">Address (EN)</label>
+                            <div class="summernote-box" id="desc-en">
+                                <textarea rows="4" class="form-control" id="textarea-box-en"></textarea>
+                            </div>
+                        </div>*@
+                </div>
+                <div class="row" id="address-box">
+                    <div class="form-group col-md-6">
+                        <label for="select" class=" form-control-label mb-0 line-h">Province<span class="text-danger">*</span></label>
+                        <select class="form-control" id="province-list" required>
+                            <option value="0">-- Select Province --</option>
+                            <option v-for="item in province" :value="item.id">{{item.name}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="select" class=" form-control-label mb-0 line-h">District<span class="text-danger">*</span></label>
+                        <select class="form-control" id="district-list">
+                            <option value="0">-- Select District --</option>
+                            <option v-for="item in district" :value="item.id">{{item.name}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="select" class=" form-control-label mb-0 line-h">Subdistrict<span class="text-danger">*</span></label>
+                        <select class="form-control" id="subdistrict-list">
+                            <option value="0">-- Select Subdistrict --</option>
+                            <option v-for="item in subdistrict" :value="item.id">{{item.name}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="select" class=" form-control-label mb-0 line-h">Opening Hours<span class="text-danger">*</span></label>
+                        <input class="form-control input-field" id="opentime" name="opentime" type="text" value="" required>
+                        <span class="text-danger" id="opentime_error"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="select" class=" form-control-label mb-0 line-h">Telephone<span class="text-danger">*</span></label>
+                        <div>
+                            <input class="form-control input-field" id="tel" name="tel" type="text" value="" maxlength="12" placeholder="08x-xxx-xxxx" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" required>
+                            <span class="text-danger" id="tel_error"></span>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="select" class=" form-control-label mb-0 line-h">Google Map Link<span class="text-danger">*</span></label>
+                        <div>
+                            <input class="form-control input-field" id="ggMap" name="ggMap" type="text" value="" required>
+                            <span class="text-danger" id="ggMap_error"></span>
+                        </div>
+                    </div>
+                </div>
+                @*<div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="select" class=" form-control-label mb-0 line-h">Opening Hours (TH)<span class="text-danger">*</span></label>
+                        <input class="form-control input-field" id="opentime" name="opentime" type="text" value="" required>
+                        <span class="text-danger" id="opentime_error"></span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="select" class=" form-control-label mb-0 line-h">Opening Hours (EN)</label>
+                        <input class="form-control input-field" id="closetime" type="text" value="">
+                    </div>
+                </div>*@
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="select" class=" form-control-label mb-0 line-h">Latitude<span class="text-danger">*</span></label>
+                        <div>
+                            <input class="form-control input-field map-angle" id="lat" name="lat" type="text" value="" required>
+                            <span class="text-danger" id="lat_error"></span>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="select" class=" form-control-label mb-0 line-h">Longtitude<span class="text-danger">*</span></label>
+                        <div>
+                            <input class="form-control input-field map-angle" id="longtitude" name="longtitude" type="text" value="" required>
+                            <span class="text-danger" id="longtitude_error"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="button-box mt-5">
+                    <div class="bd-highlight mb-3">
+                        <a href="#" class="btn btn-danger btn-mobile d-none" onclick="confirmDelete()" id="btn-delete">Remove</a>
+                        <a href="/branch/index" class="btn btn-outline-secondary btn-mobile">Cancel</a>
+                        <div class="float-sm-right">
+                            <button type="submit" class="btn btn-success submit-btn btn-mobile" id="save-btn">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/js/Branch/BranchCrudScript.js"></script>
+}

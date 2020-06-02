@@ -1,0 +1,55 @@
+﻿@using WarapornSalapao.Resources;
+
+<div class="banner-box" id="banner-box" bannerId="2">
+    <div class="banner-placeholder">
+        <img src="~/images/Home/loading.gif" />
+    </div>
+    <div v-for="item in banner">
+        <div class="banner lazy-bg-img" v-bind:style="{'background-image':'url(\''+item.imgUrl+'\')'}" :title="item.altTag"></div>
+    </div>
+</div>
+
+<div class="content-box">
+    <h1 class="header-box text-uppercase m-0">Tips & Tricks</h1>
+    <div id="blog-box">
+        <div class="row px-5 m-0 content-boxs">
+            <div class="col-md-4" v-for="item in pin">
+                <div class="my-3">
+                    <a :href="'/blog/detail/'+item.urlKey+''" target="_blank" class="text-white link-more">
+                        <div class="service-box" v-bind:style="{'background-image':'url(\''+item.imgUrl+'\')'}" :title="item.name"></div>
+                        <p class="text-center blog-name m-0">{{item.name}}</p>
+                        @*<p class="text-center blog-desc mb-0 mb-md-3">{{item.shortDescription}}</p>
+                            <div class="text-center text-md-right m-0">
+                                <a :href="'/blog/detail?id='+item.urlKey+''" target="_blank" class="text-white link-more" title="@SharedResource.GetValue("read-more")">@SharedResource.GetValue("read-more")</a>
+                            </div>*@
+                    </a>
+                </div>
+            </div>
+            <div class="col-12">
+                <hr class="line my-5" />
+            </div>
+            <div class="col-md-4" v-for="item in blog">
+                <div class="my-3">
+                    <a :href="'/blog/detail/'+item.urlKey+''" target="_blank" class="text-white link-more">
+                        <div class="service-box" v-bind:style="{'background-image':'url(\''+item.imgUrl+'\')'}" :title="item.name"></div>
+                        <p class="text-center blog-name m-0">{{item.name}}</p>
+                        @*<p class="text-center blog-desc mb-0 mb-md-3">{{item.shortDescription}}</p>
+                            <div class="text-center text-md-right m-0">
+                                <a :href="'/blog/detail?id='+item.urlKey+''" target="_blank" class="text-white link-more" title="@SharedResource.GetValue("read-more")">@SharedResource.GetValue("read-more")</a>
+                            </div>*@
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $('#blog-page').addClass('active');
+        });
+    </script>
+    <script src="~/js/blog.js"></script>
+}

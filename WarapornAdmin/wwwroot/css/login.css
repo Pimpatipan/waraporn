@@ -1,0 +1,87 @@
+﻿@font-face {
+    font-family: 'supermarket';
+    src: url('../fonts/supermarket.ttf') format('truetype');
+}
+
+* {
+    outline:none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'supermarket';
+    background-image: url('../images/warapon-bg.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-size: 22px;
+}
+
+.login {
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+.login-wrap {
+    background-color: rgba(0, 0, 0, .7);
+    padding: 100px;
+    overflow: auto;
+    box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    width: 350px;
+}
+
+.inputfield {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 14px;
+    background: #FFFFFF;
+    border: #FFFFFF solid 1px;
+    color: #000;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'supermarket', sans-serif;
+}
+
+    .inputfield:hover, .inputfield:focus {
+        border: #FF0000 solid 1px;
+    }
+
+.inputsubmit {
+    height: 50px;
+    width: 100%;
+    font-size: 18px;
+    border: none;
+    border-radius: 14px;
+    background: rgba(255, 0, 0, 0.75);
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+    font-family: 'supermarket', sans-serif;
+}
+
+    .inputsubmit:hover {
+        background: rgb(255, 0, 0);
+    }
+
+.red {
+    color: red;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.line-white {
+    border: 1px solid white;
+}

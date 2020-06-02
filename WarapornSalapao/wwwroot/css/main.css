@@ -1,0 +1,542 @@
+﻿.active {
+    color: red !important;
+}
+
+.product-name {
+    padding: 10px 0 !important;
+    margin: 0;
+}
+
+.content-desc {
+    padding: 5% !important;
+}
+
+.content-text {
+    white-space: pre-line;
+}
+
+.drug-allergy-logo {
+    width: 35px;
+    position: relative;
+    bottom: 2px;
+    float: left;
+}
+
+#drug-allergy-link {
+    font-size: 20px;
+}
+
+.logo-box {
+    line-height: 28px;
+}
+
+.dropdown-item:hover {
+    background-color: red;
+}
+
+.img-section {
+    width: 100%;
+    height: 375px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#img-section-1 {
+    background-image: url('../images/home/คัดสรร พิถีพิถัน จัดเต็ม-01.png');
+}
+
+#img-section-2 {
+    background-image: url('../images/home/คัดสรร พิถีพิถัน จัดเต็ม-02.png');
+}
+
+#img-section-3 {
+    background-image: url('../images/home/คัดสรร พิถีพิถัน จัดเต็ม-03.png');
+}
+
+.content-header {
+    letter-spacing: 5px;
+    padding-left: 20%;
+}
+
+.bg-white-trans {
+    background: rgba(255,255,255,0.5);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.section-header {
+    font-size: 40px;
+}
+
+.product-box {
+    border-radius: 50%;
+    border: 5px solid white;
+    width: 125px;
+    height: 125px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: auto;
+    cursor: pointer;
+}
+
+.product-boxs {
+    border-radius: 50%;
+    border: 5px solid white;
+    width: 150px;
+    height: 150px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: auto;
+    cursor: pointer;
+}
+
+.service-box {
+    width: 200px;
+    border-radius: 20%;
+    border: 5px solid white;
+    height: 150px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: auto;
+}
+
+.branch-search {
+    padding: 5px;
+    border-radius: 10px;
+    background: none;
+    border: 1px solid #fff;
+    margin-top: 10px;
+    margin-left: 15px;
+    color: white;
+    font-size: 18px;
+    width: 20%;
+}
+
+.search-icon {
+    width: 15px;
+    border-radius: 50%;
+}
+
+.social-menu {
+    display: flex;
+}
+
+.result-box {
+    height: 300px;
+    overflow: auto;
+    font-size: 18px;
+}
+
+.result {
+    border-bottom: 1px solid rgba(220, 220, 220,0.5);
+    margin-bottom: 15px;
+}
+
+.list-branch {
+    padding: 48px 10%;
+}
+
+.set-menu-list {
+    font-size: 20px;
+}
+
+.suggest {
+    width: 50%;
+}
+
+.branch-input {
+    background-color: white;
+    color: #000;
+    width: 100%;
+}
+
+.content-img {
+    padding: 3rem;
+}
+
+.product-padding {
+    padding: 0 15%
+}
+
+.products {
+    font-size: 20px;
+}
+
+.link-more:hover {
+    text-decoration: underline;
+}
+
+.see-more-link {
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 20px;
+    font-size: 18px;
+}
+
+.link-menu {
+    text-decoration: underline;
+}
+
+.blog-img {
+    background-image: url('../images/blog/cover faq.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 75%;
+}
+
+#blogImg1 {
+    background-image: url('../images/blog/cover การอุ่น.jpg');
+}
+
+#blogImg2 {
+    background-image: url('../images/blog/cover ข้อมูลสำหรับผู้แพ้อาหาร.jpg');
+}
+
+#service-1 {
+    background-image: url('../images/Home/service-1.jpg');
+}
+
+#service-2 {
+    background-image: url('../images/Home/service-2.jpg');
+}
+
+#service-3 {
+    background-image: url('../images/Home/service-3.jpg');
+}
+
+.blog-desc {
+    font-size: 18px;
+    height: 55px;
+    overflow: hidden;
+}
+
+.blog-name {
+    padding: 10px 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.recent-blog-date {
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    font-size: 18px;
+}
+
+.recent-blog-name {
+    color: #fff;
+    font-size: 20px;
+}
+
+    .recent-blog-name:hover {
+        color: #ff0000;
+    }
+
+#company-desc {
+    margin-top: -1.5em;
+    margin-bottom: 0;
+}
+
+.productlist-img {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 75%;
+    width: 100%;
+}
+
+/* Tabs */
+ul.tabs {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    display: flex;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    justify-content: space-around;
+}
+
+    ul.tabs li {
+        margin: 0;
+        cursor: pointer;
+        padding: 17.5px;
+        overflow: unset;
+        line-height: 31px;
+        position: relative;
+        opacity: 0.6;
+        transition: 0.3s;
+    }
+
+
+        ul.tabs li:hover {
+            opacity: 1;
+        }
+
+        ul.tabs li.active {
+            opacity: 1;
+            color: #333;
+            /*display: block;*/
+        }
+
+.tab_container {
+    /*border: 1px solid #333;*/
+    border-top: none;
+    clear: both;
+    /*float: left;*/
+    width: 100%;
+}
+
+.tab_content {
+    display: none;
+}
+
+.tab_drawer_heading {
+    display: none;
+}
+
+.product-cat-header {
+    padding: 0 7%;
+}
+
+.info-img {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 56.25%;
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+}
+
+.info-main-box {
+    padding: 96px 96px 0 96px;
+}
+
+.info-box {
+    padding: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.info-desc {
+    padding: 10% 0;
+    background: rgba(0,0,0,0.5);
+    border-radius: 0 0 20px 20px;
+}
+
+@media screen and (max-width: 1300px) {
+    .product-box {
+        width: 100px;
+        height: 100px;
+    }
+
+    ul.tabs li {
+        padding: 14px;
+    }
+
+    .product-name {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .tabs {
+        padding: 10px !important;
+    }
+
+    ul.tabs {
+        overflow-x: auto;
+        justify-content: unset;
+    }
+}
+
+@media (max-width:992px) {
+    .product-img {
+        width: 125px;
+        height: 125px;
+    }
+
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .social-menu {
+        justify-content: center;
+    }
+
+    .content-img {
+        padding: 1.5rem;
+    }
+
+    .img-section {
+        height: 300px;
+    }
+
+    .branch-search {
+        width: 25%;
+    }
+
+    .suggest {
+        width: 75%;
+    }
+
+    .recent-blog-name {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: block;
+    }
+
+    /*.tabs {
+        display: none;
+    }
+
+    .tab_drawer_heading {
+        background: rgb(40,31,32);
+        color: #fff;
+        margin: 0;
+        padding: 5px 20px;
+        text-align: center;
+        display: block;
+        cursor: pointer;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .d_active {
+        background: rgb(40,31,32);
+        color: #fff;
+        text-align:center;
+    }*/
+}
+
+@media (max-width:768px) {
+    .info-main-box {
+        padding: 96px 40px 40px 40px;
+    }
+
+    .suggest {
+        width: 100%;
+    }
+
+    .img-section {
+        height: 250px;
+    }
+
+    .content-header {
+        font-size: 20px;
+        padding: 0 20%;
+        text-align: center;
+    }
+
+    .content-img {
+        text-align: center;
+    }
+
+    .branch-search {
+        width: 20%;
+    }
+
+    .list-branch {
+        padding: 64px 5%;
+    }
+
+    .product-cat-header {
+        padding: 0 5%;
+    }
+}
+
+@media (max-width:767px) {
+    .info-img {
+        border-radius: 0 20px 20px 0;
+    }
+
+    .info-desc {
+        padding: 20% 0;
+        border-radius: 20px 0 0 20px;
+        font-size: 18px;
+        position: relative;
+        height: 100px;
+    }
+
+        .info-desc div {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -moz-transform: translateX(-50%) translateY(-50%);
+            -webkit-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+        }
+
+    .flex-mobile {
+        display: flex;
+        order: 2;
+    }
+
+    .product-box {
+        width: 125px;
+        height: 125px;
+    }
+
+    .product-padding {
+        padding: 0 1rem;
+    }
+
+    .blog-img {
+        width: 95%;
+    }
+
+    .blog-desc {
+        font-size: 18px;
+        max-height: 55px;
+        height: auto;
+        overflow: hidden;
+    }
+}
+
+@media (max-width:600px) {
+    .img-home {
+        text-align: center;
+    }
+
+    .product-boxs {
+        width: 100px;
+        height: 100px;
+    }
+
+    .content-desc {
+        margin: 20px;
+    }
+
+    .content-img {
+        padding: 2rem;
+    }
+
+    .img-section {
+        width: 100%;
+    }
+
+    #map {
+        height: 350px;
+    }
+
+    .branch-search {
+        width: 90%;
+        margin: auto;
+        margin-top: 10px;
+    }
+
+    .list-branch {
+        padding: 64px 10%;
+    }
+}

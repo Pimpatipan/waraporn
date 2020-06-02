@@ -1,0 +1,399 @@
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
+for details on configuring this project to bundle and minify static web assets. */
+
+@font-face {
+    font-family: 'supermarket';
+    src: url('../fonts/supermarket.ttf') format('truetype');
+}
+
+*:focus {
+    outline: none !important;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'supermarket';
+    font-size: 22px;
+}
+
+img {
+    max-width: 100%;
+}
+
+.mainBg {
+    background-image: url('../images/home/warapon-bg.jpg');
+    background-size: 100% auto;
+    position: fixed;
+    width: 100%;
+    height: 300%;
+    top: 0;
+    left: 0;
+    z-index: -1
+}
+
+.loading-bg {
+    background: rgba(255,255,255,0.5);
+}
+
+.infowindow-body {
+    font-size: 18px;
+}
+
+.infowindow-header {
+    font-size: 22px;
+}
+
+.lazy-bg-img {
+    opacity: 0;
+}
+
+.is-lazy-loaded {
+    opacity: 1;
+}
+
+#fb-footer {
+    font-size: 30px;
+}
+
+.header {
+    font-size: 28px;
+}
+
+.modal-header {
+    border: 0;
+    color: #ffffff;
+    border-radius: 0;
+}
+
+/*.modal-content {
+    background: rgb(40,31,32);
+    color: white;
+}*/
+
+.modal-img {
+    width: 100%;
+    padding-top: 47%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.banner-placeholder {
+    padding-top: 50%;
+    position: relative;
+    background: white;
+    opacity: 0.5;
+}
+
+    .banner-placeholder img, #loading {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -moz-transform: translateX(-50%) translateY(-50%);
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
+    }
+
+.delivery-txt {
+    padding-left: 32px;
+}
+
+.delivery-txt-7 {
+    padding-right: 7px;
+}
+
+.delivery-txt-10 {
+    padding-right: 10px;
+}
+
+#close {
+    opacity: 1;
+}
+
+.container-box {
+    max-width: 1300px;
+    padding: 0px;
+    margin: auto;
+}
+
+.hamburger {
+    font-size: 30px;
+}
+
+.banner {
+    width: 100%;
+    padding-top: 50%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: opacity 0.4s 0.5s ease-out;
+}
+
+.banner-box {
+    padding-top: 70px;
+}
+
+.footer {
+    background: rgba(40,31,32,0.95);
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.nav-header {
+    position: fixed;
+    background: rgb(40,31,32);
+    border-radius: 0;
+    z-index: 1;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.navbar-brand {
+    background-image: url('../images/home/wrplogo_transparent.png');
+    width: 225px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 0;
+    height: 70px;
+}
+
+.dropdown-toggle {
+    font-size: 22px;
+}
+
+.language-dropdown {
+    background: #424242;
+    border-radius: 0;
+}
+
+    .language-dropdown .dropdown-item {
+        color: #ffffff;
+    }
+
+.btn-lang {
+    background: none;
+}
+
+.nav-item {
+    /*font-size: 20px;*/
+    padding: 10px 23px;
+}
+
+    .nav-item a {
+        color: white;
+        display: block
+    }
+
+        .nav-item a:hover, .nav-item a:focus {
+            color: red;
+            background: none !important;
+        }
+
+.slick-dots {
+    bottom: 15px !important;
+}
+
+    .slick-dots li button:before {
+        font-size: 10px !important;
+    }
+
+.slick-dotted.slick-slider {
+    margin-bottom: 0px !important;
+}
+
+.header-box {
+    background: rgba(40,31,32,0.95);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 30px;
+}
+
+.content-box {
+    background: rgba(19,10,9,0.7);
+    color: white;
+}
+
+.content-boxs {
+    padding-top: 48px;
+    padding-bottom: 48px;
+}
+
+.error-page {
+    height: 100vh;
+    background: rgba(0,0,0,0.7);
+    position: relative;
+}
+
+.jumbotron {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background: none;
+    width: 100%;
+}
+
+.opacity-5 {
+    opacity: 0.5;
+}
+
+.party-text {
+    display: list-item;
+}
+
+.active {
+    color: red !important;
+}
+
+#navbarSupportedContent {
+    justify-content: center;
+}
+
+#product-sub-desc {
+    font-size: 16px;
+}
+
+.news-banner {
+    cursor: pointer;
+    width: 100%;
+    padding-top: 47%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+}
+
+.infowindow-box {
+    color: black;
+    font-family: 'supermarket';
+}
+
+.not-found {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 22px;
+}
+
+.line {
+    border-top: 1px solid white;
+    width: 100px;
+    margin: auto;
+}
+
+
+/*return to top*/
+#return-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.7);
+    width: 50px;
+    height: 50px;
+    display: block;
+    text-decoration: none;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
+    display: none;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+    #return-to-top i {
+        color: #fff;
+        margin: 0;
+        position: relative;
+        left: 34%;
+        top: 5px;
+        font-size: 19px;
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -ms-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+    }
+
+    #return-to-top:hover {
+        background: rgba(0, 0, 0, 0.9);
+    }
+
+        #return-to-top:hover i {
+            color: #fff;
+            top: 10px;
+        }
+
+@media screen and (max-width: 1100px) {
+    .nav-item {
+        padding: 10px 17px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .navbar-brand {
+        width: 200px;
+    }
+
+    body {
+        background-attachment: scroll
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .content-boxs {
+        padding-top: 64px;
+        padding-bottom: 64px;
+    }
+
+    .w-70 {
+        width: 70%
+    }
+
+    .w-30 {
+        width: 30%;
+        text-align: right;
+    }
+
+    #service-box {
+        line-height: 50px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .navbar-brand {
+        width: 200px;
+        margin: 0;
+    }
+
+    .modal-txt-box {
+        font-size: 18px;
+    }
+
+    .f-24 {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .company-box {
+        word-break: break-word;
+    }
+}

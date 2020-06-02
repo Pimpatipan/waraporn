@@ -1,0 +1,133 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "jquery@3.4.1",
+      "destination": "wwwroot/lib/jquery/"
+    },
+    {
+      "library": "twitter-bootstrap@4.3.1",
+      "destination": "wwwroot/lib/bootstrap4/",
+      "files": [
+        "js/bootstrap.bundle.js",
+        "css/bootstrap.min.css.map",
+        "css/bootstrap.min.css",
+        "css/bootstrap.css.map",
+        "css/bootstrap.css",
+        "css/bootstrap-reboot.min.css.map",
+        "css/bootstrap-reboot.min.css",
+        "css/bootstrap-reboot.css.map",
+        "css/bootstrap-reboot.css",
+        "css/bootstrap-grid.min.css.map",
+        "css/bootstrap-grid.min.css",
+        "css/bootstrap-grid.css.map",
+        "css/bootstrap-grid.css",
+        "js/bootstrap.bundle.js.map",
+        "js/bootstrap.bundle.min.js",
+        "js/bootstrap.bundle.min.js.map",
+        "js/bootstrap.js",
+        "js/bootstrap.js.map",
+        "js/bootstrap.min.js",
+        "js/bootstrap.min.js.map"
+      ]
+    },
+    {
+      "provider": "cdnjs",
+      "library": "vue@2.6.10",
+      "destination": "wwwroot/lib/vue/"
+    },
+    {
+      "library": "popper.js@1.15.0",
+      "destination": "wwwroot/lib/popper.js/",
+      "files": [
+        "esm/popper-utils.js",
+        "esm/popper-utils.js.map",
+        "esm/popper-utils.min.js",
+        "esm/popper-utils.min.js.map",
+        "esm/popper.js",
+        "esm/popper.js.map",
+        "esm/popper.min.js",
+        "esm/popper.min.js.map",
+        "umd/popper-utils.js",
+        "umd/popper-utils.js.map",
+        "umd/popper-utils.min.js",
+        "umd/popper-utils.min.js.map",
+        "umd/popper.js",
+        "umd/popper.js.map",
+        "umd/popper.min.js",
+        "umd/popper.min.js.map",
+        "popper-utils.js",
+        "popper-utils.js.map",
+        "popper-utils.min.js",
+        "popper-utils.min.js.map",
+        "popper.js",
+        "popper.js.map",
+        "popper.min.js",
+        "popper.min.js.map"
+      ]
+    },
+    {
+      "provider": "cdnjs",
+      "library": "font-awesome@5.10.2",
+      "destination": "wwwroot/lib/font-awesome/",
+      "files": [
+        "css/all.css",
+        "css/all.min.css",
+        "css/brands.css",
+        "css/brands.min.css",
+        "css/fontawesome.css",
+        "css/fontawesome.min.css",
+        "css/regular.css",
+        "css/regular.min.css",
+        "css/solid.css",
+        "css/solid.min.css",
+        "css/svg-with-js.css",
+        "css/svg-with-js.min.css",
+        "css/v4-shims.css",
+        "css/v4-shims.min.css",
+        "js/all.js",
+        "js/all.min.js",
+        "js/brands.js",
+        "js/brands.min.js",
+        "js/conflict-detection.js",
+        "js/conflict-detection.min.js",
+        "js/fontawesome.js",
+        "js/fontawesome.min.js",
+        "js/regular.js",
+        "js/regular.min.js",
+        "js/solid.js",
+        "js/solid.min.js",
+        "js/v4-shims.js",
+        "js/v4-shims.min.js",
+        "sprites/brands.svg",
+        "sprites/regular.svg",
+        "sprites/solid.svg",
+        "webfonts/fa-brands-400.eot",
+        "webfonts/fa-brands-400.svg",
+        "webfonts/fa-brands-400.ttf",
+        "webfonts/fa-brands-400.woff",
+        "webfonts/fa-brands-400.woff2",
+        "webfonts/fa-regular-400.eot",
+        "webfonts/fa-regular-400.svg",
+        "webfonts/fa-regular-400.ttf",
+        "webfonts/fa-regular-400.woff",
+        "webfonts/fa-regular-400.woff2",
+        "webfonts/fa-solid-900.eot",
+        "webfonts/fa-solid-900.svg",
+        "webfonts/fa-solid-900.ttf",
+        "webfonts/fa-solid-900.woff",
+        "webfonts/fa-solid-900.woff2"
+      ]
+    },
+    {
+      "library": "js-cookie@2.2.1",
+      "destination": "wwwroot/lib/js-cookie/",
+      "files": [
+        "js.cookie.js",
+        "js.cookie.min.js",
+        "js.cookie.min.js.map"
+      ]
+    }
+  ]
+}

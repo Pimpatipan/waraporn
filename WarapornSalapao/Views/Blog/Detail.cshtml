@@ -1,0 +1,45 @@
+﻿@using WarapornSalapao.Resources;
+
+<div class="banner-box" id="banner-box" bannerId="2">
+    <div class="banner-placeholder">
+        <img src="~/images/Home/loading.gif" />
+    </div>
+    <div v-for="item in banner">
+        <div class="banner lazy-bg-img" v-bind:style="{'background-image':'url(\''+item.imgUrl+'\')'}" :title="item.altTag"></div>
+    </div>
+</div>
+
+<div class="content-box" id="blog-detail-box">
+    <div class="header-box text-uppercase">{{blogdetail.name}}</div>
+
+    <div class="row m-0 px-3 px-md-5 content-boxs">
+        <div class="col-md-8">
+            <div class="blog-img w-100" id="blog-main-img" v-bind:style="{'background-image':'url(\''+blogdetail.imgUrl+'\')'}"></div>
+            <div class="pt-3" id="blog-detail" v-html="blogdetail.description">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <h3 class="pb-2 pt-5 pt-md-0">@SharedResource.GetValue("recent-blog")</h3>
+            <div class="row no-gutters pb-3" v-for="items in recentBlog">
+                <div class="col-6">
+                    <div class="blog-img" v-bind:style="{'background-image':'url(\''+items.imgUrl+'\')'}"></div>
+                </div>
+                <div class="col-6">
+                    <div class="pl-0 pl-sm-3">
+                        <a :href="'/blog/detail/'+items.urlKey+''" class="recent-blog-name" :title="items.urlKey">{{items.name}}</a>
+                        <p class="recent-blog-date">{{items.displayDate}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $('#blog-page').addClass('active');
+        });
+    </script>
+    <script src="~/js/blogdetail.js"></script>
+}

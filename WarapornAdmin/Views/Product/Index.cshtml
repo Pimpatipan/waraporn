@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="float-right">
+    <a class="btn btn-success font-weight-bold" href="/Product/CreateUpdate?Id=0">CREATE</a>
+</div>
+<h1 class="font-weight-bold">PRODUCT</h1>
+
+<div class="data-table border-black bg-white mt-4 ">
+    <div class="p-4" id="table-box">
+        <table id="dataTable" class="display nowrap table-border w-100 text-center" tableId="product" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>NAME</th>
+                    <th>THUMBNAIL</th>
+                    <th>CATEGORY</th>
+                    <th>STATUS</th>
+                    <th>ACTION</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/js/Product/ProductIndexScript.js"></script>
+}

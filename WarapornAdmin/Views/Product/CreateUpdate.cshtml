@@ -1,0 +1,139 @@
+﻿
+@{
+    ViewData["Title"] = "CreateUpdate";
+}
+
+<h1 class="font-weight-bold header" id="product">CREATE / UPDATE PRODUCT</h1>
+<span class="d-none banner-name">test</span> @*banner name (update)*@
+
+<div class="data-table border-red bg-white mt-4 ">
+    <div class="p-4 p-sm-5">
+        <form id="myform">
+            <input type="hidden" name="product-id" id="productId" value="" />
+            <div class="detail-box">
+                <div class="form-group">
+                    <label for="select" class=" form-control-label mb-0 line-h">Status<span class="text-danger">*</span></label>
+                    <div class="d-flex">
+                        <div class="radio col-6">
+                            <input class="status" id="radio-1" name="banner" type="radio" value="true" checked="checked">
+                            <label for="radio-1" class="radio-label">Enable </label>
+                        </div>
+                        <div class="radio col-6">
+                            <input class="status" id="radio-0" name="banner" type="radio" value="false">
+                            <label for="radio-0" class="radio-label">Disabled</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="select" class=" form-control-label mb-0 line-h">Thumbnail<span class="text-danger">*</span></label>
+                    <div>
+                        <div class="div-file-upload">
+                            <label class="btn btn-secondary mb-0" for="FileImage">
+                                <input class="input-file-upload d-none input-field" id="FileImage" name="FileImage" type="file" accept="image/*" value="">
+                                <canvas id="FileImage-canvas" class="d-none"></canvas>
+                                <span class="font-weight-bold">Choose file</span>
+                            </label>
+
+                            <span class="file-name ml-0 ml-md-3 filename"></span>
+                            <input type="hidden" name="thumbnail" id="thumbnail" class="thumbnail" value="" required />
+                            @*<button type="button" class="btn btn-link btn-delete-file d-none">
+                        <i class="fa fa-times-circle icon-delete"></i>
+                    </button>*@
+                        </div>
+                        <input type="hidden" name="name" id="pictureImg" value="" />
+                        <div class="preview-upload mt-3 d-none" id="product-img"></div>
+                        <span class="text-secondary img-condition"><span class="text-danger">*</span>ขนาดไฟล์ต้องไม่เกิน 10 MB และต้องเป็นสกุลไฟล์ .jpg , .jpeg, .png เท่านั้น</span>
+                        <p class="text-danger" id="thumbnail_error"></p>
+                    </div>
+                </div>
+                <div class="row" id="categorys-box">
+                    <div class="form-group col-md-6">
+                        <label for="select" class=" form-control-label mb-0 line-h">Product Category<span class="text-danger">*</span></label>
+                        <div>
+                            <select class="form-control input-field" id="product-cat" name="productCat" required>
+                                <option value="">-- Select Product Category --</option>
+                                <option v-for="item in category" :value="item.id">{{item.name}}</option>
+                            </select>
+                            <span class="validation text-danger" id="productCat_error"></span>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6" id="product-sub">
+                        <label for="select" class=" form-control-label mb-0 line-h">Product Sub Category<span class="text-danger">*</span></label>
+                        <div>
+                            <select class="form-control input-field" id="product-sub-cat" name="productSubCat" required>
+                                <option value="">-- Select Product Sub Category --</option>
+                                <option v-for="item in subcategory" :value="item.id">{{item.name}}</option>
+                            </select>
+                            <span class="validation text-danger" id="productSubCat_error"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="select" class=" form-control-label mb-0 line-h">Product Name (TH)<span class="text-danger">*</span></label>
+                        <div>
+                            <input class="form-control input-field" id="name-th" name="name" type="text" value="" required>
+                            <span class="validation text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="select" class=" form-control-label mb-0 line-h">Product Name (EN)</label>
+                        <div>
+                            <input class="form-control input-field" id="name-en" type="text" value="">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="select" class=" form-control-label mb-0 line-h">Product Description (TH)</label>
+                        <div>
+                            <input class="form-control input-field" id="desc-th" name="descth" type="text" value="">
+                            <span class="validation text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="select" class=" form-control-label mb-0 line-h">Product Description (EN)</label>
+                        <div>
+                            <input class="form-control input-field" id="desc-en" type="text" value="">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="select" class=" form-control-label mb-0 line-h">Product Sub Description (TH)</label>
+                        <div>
+                            <input class="form-control input-field" id="sub-desc-th" type="text" value="">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="select" class=" form-control-label mb-0 line-h">Product Sub Description (EN)</label>
+                        <div>
+                            <input class="form-control input-field" id="sub-desc-en" type="text" value="">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="select" class=" form-control-label mb-0 line-h">Sort Order<span class="text-danger">*</span></label>
+                        <div>
+                            <input class="form-control input-field" id="sortorder" name="sortorder" type="number" value="" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="9" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="button-box mt-5">
+                    <div class="bd-highlight mb-3">
+                        <a href="#" class="btn btn-danger btn-mobile d-none" onclick="confirmDelete()" id="btn-delete">Remove</a>
+                        <a href="/product/index" class="btn btn-outline-secondary btn-mobile">Cancel</a>
+                        <div class="float-sm-right">
+                            <button type="submit" class="btn btn-success submit-btn btn-mobile" id="save-btn">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/js/Product/ProductCrudScript.js"></script>
+}

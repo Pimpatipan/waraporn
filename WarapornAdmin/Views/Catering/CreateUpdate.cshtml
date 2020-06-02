@@ -1,0 +1,101 @@
+﻿@{
+    ViewData["Title"] = "CreateUpdate";
+}
+
+<h1 class="font-weight-bold header">CREATE / UPDATE CATERING</h1>
+<span class="d-none banner-name">test</span> @*banner name (update)*@
+
+<div class="data-table border-red bg-white mt-4 ">
+    <div class="p-4 p-sm-5">
+        <form id="myform">
+            <div class="detail-box">
+                <div class="form-group">
+                    <label for="select" class=" form-control-label mb-0 line-h">Status<span class="text-danger">*</span></label>
+                    <div class="d-flex">
+                        <div class="radio col-6">
+                            <input class="status" id="radio-1" name="banner" type="radio" value="1" checked="checked">
+                            <label for="radio-1" class="radio-label">Enable </label>
+                        </div>
+                        <div class="radio col-6">
+                            <input class="status" id="radio-0" name="banner" type="radio" value="0">
+                            <label for="radio-0" class="radio-label">Disabled</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="select" class=" form-control-label mb-0 line-h">Thumbnail<span class="text-danger">*</span></label>
+                    <div>
+                        <div class="div-file-upload">
+                            <label class="btn btn-secondary mb-0" for="FileImage">
+                                <input class="input-file-upload d-none input-field" id="FileImage" name="fileimage" type="file" accept="image/*" value="" required>
+                                <canvas id="FileImage-canvas" class="d-none"></canvas>
+                                <span class="font-weight-bold">Choose file</span>
+                            </label>
+
+                            <span class="file-name ml-0 ml-md-3 filename"></span>
+                            @*<button type="button" class="btn btn-link btn-delete-file d-none">
+                            <i class="fa fa-times-circle icon-delete"></i>
+                        </button>*@
+                        </div>
+                        <div class="preview-upload mt-3 d-none" id="catering-img"></div>
+                        <span class="text-secondary img-condition"><span class="text-danger">*</span>ขนาดไฟล์ต้องไม่เกิน 10 MB และต้องเป็นสกุลไฟล์ .jpg , .jpeg, .png เท่านั้น</span>
+                        <p class="text-danger" id="FileImage_error"></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="select" class=" form-control-label mb-0 line-h">Name (TH)<span class="text-danger">*</span></label>
+                        <div>
+                            <input class="form-control input-field" id="name" name="name" type="text" value="" required>
+                            <span class="text-danger" id="name_error"></span>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="select" class=" form-control-label mb-0 line-h">Name (EN)</label>
+                        <div>
+                            <input class="form-control input-field" id="name" type="text" value="">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="select" class=" form-control-label mb-0 line-h">Description (TH)<span class="text-danger">*</span></label>
+                        <div id="desc-th" class="summernote-box">
+                            <textarea rows="4" class="form-control input-field" name="textarea" id="textareath" required></textarea>
+                            <span class="text-danger" id="textareath_error"></span>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="select" class=" form-control-label mb-0 line-h">Description (EN)</label>
+                        <div class="summernote-box" id="desc-en">
+                            <textarea rows="4" class="form-control" id="textarea-box-en"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="select" class=" form-control-label mb-0 line-h">Sort Order<span class="text-danger">*</span></label>
+                    <div>
+                        <input class="form-control input-field" id="sortorder" name="sortorder" type="number" value="" required>
+                        <span class="text-danger" id="sortorder_error"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="select" class=" form-control-label mb-0 line-h">Alt Tag<span class="text-danger">*</span></label>
+                    <div>
+                        <input class="form-control input-field" id="alttag" name="alttag" type="text" value="" required>
+                        <span class="text-danger" id="alttag_error"></span>
+                    </div>
+                </div>
+                <div class="button-box mt-5">
+                    <div class="bd-highlight mb-3">
+                        <a href="#" class="btn btn-danger btn-mobile d-none" onclick="confirmDelete()" id="btn-delete">Remove</a>
+                        <a href="/catering/index" class="btn btn-outline-secondary btn-mobile">Cancel</a>
+                        <div class="float-sm-right">
+                            <button type="submit" class="btn btn-success submit-btn btn-mobile" id="save-btn">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

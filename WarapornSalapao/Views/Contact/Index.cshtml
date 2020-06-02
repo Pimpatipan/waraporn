@@ -1,0 +1,38 @@
+﻿@using WarapornSalapao.Resources;
+
+<div class="banner-box" id="banner-box" bannerId="1">
+    <div class="banner-placeholder">
+        <img src="~/images/Home/loading.gif" />
+    </div>
+    <div v-for="item in banner">
+        <div class="banner lazy-bg-img" v-bind:style="{'background-image':'url(\''+item.imgUrl+'\')'}" :title="item.altTag"></div>
+    </div>
+</div>
+
+<div class="content-box">
+    <h1 class="header-box m-0">@SharedResource.GetValue("menu-contact")</h1>
+    <div class="row no-gutters px-5 content-boxs">
+        <div class="col-md-6 flex-mobile mt-4 mt-md-0">
+            <div class="company-box">
+                <h4>@SharedResource.GetValue("company-name")</h4>
+                <p class="mx-0 content-text" id="company-desc">
+                    @SharedResource.GetValue("company-address")
+                </p>
+                <p class="m-0"><i class="fab fa-facebook-square pr-1"></i><a href="https://www.facebook.com/pg/warapornsalapao.th" target="_blank" class="text-white" title="@SharedResource.GetValue("waraporn-fb")">@SharedResource.GetValue("waraporn-fb")</a></p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="p-3 border-white border mx-auto text-center m-0 suggest">
+                <p class="m-0 content-text">@SharedResource.GetValue("company-desc")</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $('#contact-page').addClass('active');
+        });
+    </script>
+}

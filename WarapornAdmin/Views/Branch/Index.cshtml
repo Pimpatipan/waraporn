@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="float-right">
+    <a class="btn btn-success font-weight-bold" href="/Branch/CreateUpdate?Id=0">CREATE</a>
+</div>
+<h1 class="font-weight-bold">BRANCH</h1>
+
+<div class="data-table border-black bg-white mt-4 ">
+    <div class="p-4" id="table-box">
+        <table id="dataTable" class="display nowrap table-border w-100 text-center" tableId="branch" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>BRANCH NAME</th>
+                    <th>ADDRESS</th>
+                    <th>TEL</th>
+                    <th>OPENING HOURS</th>
+                    <th>ACTION</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/js/Branch/BranchIndexScript.js"></script>
+}

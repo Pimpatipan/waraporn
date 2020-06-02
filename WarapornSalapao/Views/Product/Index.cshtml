@@ -1,0 +1,57 @@
+﻿@using WarapornSalapao.Resources;
+
+<div class="banner-box" id="banner-box" bannerId="2">
+    <div class="banner-placeholder">
+        <img src="~/images/Home/loading.gif" />
+    </div>
+    <div v-for="item in banner">
+        <div class="banner lazy-bg-img" v-bind:style="{'background-image':'url(\''+item.imgUrl+'\')'}" :title="item.altTag"></div>
+    </div>
+</div>
+
+<div class="content-box">
+    <h1 class="header-box m-0">@SharedResource.GetValue("menu-product")</h1>
+    <div class="pt-3 pt-sm-0">
+        <section id="product-category-box">
+                <ul class="tabs">
+                    <li v-for="(item, index) in category" :rel="`tab${index}`" :id="`tab-`+item.id" :productId="item.id" @@click="changeMenu(item.id,`tab`+item.id,`tab-`+item.id)" :data-id="item.name"><div class="product-img product-box" v-bind:style="{'background-image':'url(\''+item.imgUrl+'\')'}" :title="item.altTag"></div><p class="text-center product-name">{{item.name}}</p></li>
+                </ul>
+            <!-- .tab_container -->
+            <div class="tab_container content-boxs pt-0">
+                <div v-for="(item, index) in category" :id="`tab`+item.id" class="tab_content">
+                    <div class="row no-gutters" v-for="(pro, index) in products">
+                        <div class="header-box col-12">{{pro.categoryName}}</div>
+                        <div v-for="(pros, index) in pro.subCategoryDisplays" class="col-12">
+                            <div class="row no-gutters">
+                                <div class="col-12"><p class="product-cat-header pt-5" v-if="pros.displayName != false">| {{pros.name}} |</p></div>
+                                <div class="col-6 col-sm-3 text-center products p-3" v-for="(product, index) in pros.productList">
+                                    <div class="productlist-img" :id="`productlist`+pros.id" v-bind:style="{'background-image':'url(\''+product.imgUrl+'\')'}" :title="product.altTag"></div>
+                                    <p class="m-0 pt-3">{{product.name}}</p>
+                                    <p class="m-0">{{product.description}}</p>
+                                    <p class="m-0" id="product-sub-desc">{{product.subDescription}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div v-if="item.id == 7" class="text-center pb-5">
+                        *เพิ่มช็อตกาแฟ (Coffee Shot) 15.-<br />
+                        *น้ำแข็ง (Ice) 2.-<br />
+                    </div>
+                    <div v-else-if="item.id == 6" class="text-center pb-5">
+                        *น้ำแข็ง (Ice) 2.-
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $('#product-page').addClass('active');
+        });
+    </script>
+    <script src="~/js/product.js" defer></script>
+}

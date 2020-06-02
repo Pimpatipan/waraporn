@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+<form id="myform">
+    <div class="float-right">
+        <button type="submit" class="btn btn-success submit-btn mt-0 mt-sm-1" id="save-btn">Save</button>
+    </div>
+    <h1 class="font-weight-bold header">CONTACT US</h1>
+
+    <div class="data-table border-red bg-white mt-4 ">
+        <div class="p-4 p-sm-5">
+
+            <div class="detail-box">
+                <div class="form-group">
+                    <label for="select" class=" form-control-label mb-2 line-h">Company Description (TH)<span class="text-danger">*</span></label>
+                    <div class="summernote-box" id="comp-desc-th">
+                        <textarea class="summernote" id="text-1" name="text-1" required></textarea>
+                    </div>
+                    <p id="text-1_error" class="text-danger"></p>
+                </div>
+                <div class="form-group">
+                    <label for="select" class=" form-control-label mb-2 line-h">Company Description (EN)</label>
+                    <div class="summernote-box" id="comp-desc-en">
+                        <textarea class="summernote"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="select" class=" form-control-label mb-2 line-h">Company Sub Description (TH)<span class="text-danger">*</span></label>
+                    <div class="summernote-box" id="sub-desc-th">
+                        <textarea class="summernotes" id="text-2" name="text-2" required></textarea>
+                    </div>
+                    <p id="text-2_error" class="text-danger"></p>
+                </div>
+                <div class="form-group">
+                    <label for="select" class=" form-control-label mb-2 line-h">Company Sub Description (EN)</label>
+                    <div class="summernote-box" id="sub-desc-en">
+                        <textarea class="summernote"></textarea>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</form>

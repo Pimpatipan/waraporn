@@ -1,0 +1,81 @@
+﻿@using WarapornSalapao.Resources;
+
+<div class="banner-box" id="banner-box" bannerId="2">
+    <div class="banner-placeholder">
+        <img src="~/images/Home/loading.gif" />
+    </div>
+    <div v-for="item in banner">
+        <div class="banner lazy-bg-img" v-bind:style="{'background-image':'url(\''+item.imgUrl+'\')'}" :title="item.altTag"></div>
+    </div>
+</div>
+
+<div class="content-box">
+    <h1 class="header-box m-0">@SharedResource.GetValue("menu-branch")</h1>
+    <div class="row no-gutters" id="result-box">
+        <div class="col-md-6 p-4">
+            <div id="map">
+            </div>
+        </div>
+        <div class="col-md-6 p-4" id="re">
+            <div class="row">
+                <div class="col-md-6 pb-2 pb-md-0">
+                    <select class="form-control" id="province-list">
+                        <option value="0">@SharedResource.GetValue("province")</option>
+                        <option v-for="item in province" :value="item.id">{{item.name}}</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <select class="form-control" id="district-list">
+                        <option value="0">@SharedResource.GetValue("district")</option>
+                        <option v-for="item in district" :value="item.id">{{item.name}}</option>
+                    </select>
+                </div>
+                <div class="col-md-6 pt-2">
+                    <select class="form-control" id="subdistrict-list">
+                        <option value="0">@SharedResource.GetValue("subdistrict")</option>
+                        <option v-for="item in subdistrict" :value="item.id">{{item.name}}</option>
+                    </select>
+                </div>
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-sm-9 col-md-6 pt-2">
+                            <input type="text" placeholder="@SharedResource.GetValue("search")" class="form-control branch-input">
+                        </div>
+                        <button type="button" @@click="getPlaces()" class="branch-search">@SharedResource.GetValue("search")<img src="~/images/search.png" alt="search" class="search-icon ml-2" /></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="result-box my-3 position-relative" id="branch-box">
+                <img src="~/images/Home/loading.gif" id="loading" class="d-none" />
+                <div class="result" v-for="item in places">
+                    <div class="d-flex justify-content-between">
+                        <p class="m-0 w-70">@SharedResource.GetValue("menu-branch") {{item.name}}</p>
+                        <a :href="item.menuImg" target="_blank" class="pl-3 text-white link-menu w-30" title="@SharedResource.GetValue("see-menu")">@SharedResource.GetValue("see-menu")</a>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <p class="w-70">@SharedResource.GetValue("tel") {{item.telephone}} @SharedResource.GetValue("opening-hours") {{item.timeService}} @SharedResource.GetValue("time")</p>
+                        <a :href="item.googleMap" target="_blank" class="pl-3 text-white link-menu w-30" title="@SharedResource.GetValue("see-map")">@SharedResource.GetValue("see-map")</a>
+                    </div>
+                </div>
+                <p class="text-center text-danger not-found d-none">ไม่พบข้อมูล</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@section scripts{
+
+    <script>
+        $(document).ready(function () {
+            $('#branch-page').addClass('active');
+            $('.branch-search').click();
+            $('#landing-modal').modal('show');
+        });
+    </script>
+    <script src="~/js/map.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIgb0R5frW6mf7IBjZ92nQBUAG0LKnhdk&callback=initMap"  defer></script>
+    <script src="~/js/branch.js"></script>
+}
+

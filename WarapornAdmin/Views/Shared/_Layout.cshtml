@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Waraporn Salapao Admin</title>
+    <link rel="shortcut icon" type="image/png" href="~/images/favicon.ico" />
+    <environment include="Development">
+        <link href="~/lib/bootstrap4/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="~/css/site.min.css" rel="stylesheet" />
+        <link href="~/lib/font-awesome/css/all.min.css" rel="stylesheet" />
+        <link href="~/lib/datatables/css/jquery.dataTables.min.css" rel="stylesheet" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css" />
+    </environment>
+    <environment exclude="Development">
+        <link href="~/lib/bootstrap4/css/bootstrap.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+        <link href="~/lib/font-awesome/css/all.min.css" rel="stylesheet" />
+        <link href="~/lib/datatables/css/jquery.dataTables.min.css" rel="stylesheet" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css" />
+    </environment>
+</head>
+<body>
+    <div id="pageloader">
+        <img src="~/images/loading.gif" alt="processing..." />
+    </div>
+
+    <nav class="navbar navbar-light d-block d-xl-flex navbar-expand-xl justify-content-between py-0 headerTop">
+        <button class="navbar-toggler border-0 p-0" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+                aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="menu-icon fas fa-bars text-white"></i>
+        </button>
+        @*<a class="navbar-brand pl-0 " href="@Url.Action("Index", "Settings")"><img style="width: 151px;height: 51px;" src="" id="img-logo" class="logo-img" alt="Logo"></a>*@
+
+        <div class="logo d-inline-block d-xl-block">
+        </div>
+
+        <div class="user-box">
+            <span class="user-email pr-2 d-none d-md-inline text-white"></span>
+            <button id="signOut" class="btn btn-danger">Sign Out</button>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="menu-box navbar navbar-expand-xl navbar-default ">
+                <div id="navbarsExampleDefault" class="main-menu collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="menu-title">WEBSITE CONTENT</li><!-- /.menu-title -->
+                        <li id="menu-banner" class="menu">
+                            <a href="@Url.Action("Index", "Banner")"> <i class="menu-icon fas fa-images"></i><div class="menu-padding">Banner</div></a>
+                        </li>
+
+                        <li id="menu-branch" class="menu">
+                            <a href="@Url.Action("Index", "Branch")"> <i class="menu-icon fas fa-store"></i><div class="menu-padding">Branch</div></a>
+                        </li>
+
+                        @*<li id="menu-catering" class="menu">
+                                <a href="@Url.Action("Index", "Catering")"> <i class="menu-icon fas fa-store"></i><div class="menu-padding">Catering</div></a>
+                            </li>
+
+                            <li id="menu-contactus" class="menu">
+                                <a href="@Url.Action("Index", "ContactUs")"> <i class="menu-icon fas fa-id-card"></i><div class="menu-padding">Contact Us</div></a>
+                            </li>*@
+
+                        <li id="menu-news" class="menu">
+                            <a href="@Url.Action("Index", "News")"> <i class="menu-icon fas fa-newspaper"></i><div class="menu-padding">News</div></a>
+                        </li>
+
+                        <li id="menu-product" class="menu">
+                            <a href="@Url.Action("Index", "Product")"> <i class="menu-icon fas fa-hamburger"></i><div class="menu-padding">Product</div></a>
+                        </li>
+
+                        @*<li id="menu-service" class="menu">
+                                <a href="@Url.Action("Index", "Service")"> <i class="menu-icon fas fa-screwdriver"></i><div class="menu-padding">Service</div></a>
+                            </li>
+
+                            <li id="menu-snackbox" class="menu">
+                                <a href="@Url.Action("Index", "Snackbox")"> <i class="menu-icon fas fa-box"></i><div class="menu-padding">Snackbox</div></a>
+                            </li>*@
+
+                        <li id="menu-blog" class="menu">
+                            <a href="@Url.Action("Index", "Blog")"> <i class="menu-icon fas fa-blog"></i><div class="menu-padding">Tips & Tricks</div></a>
+                        </li>
+
+                        @*<li id="menu-homepage" class="menu-item-has-children dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-home"></i><div class="menu-padding"></div>Home Page</a>
+                                <ul class="sub-menu children dropdown-menu">
+                                    <li><a href="@Url.Action("Index", "Banner")" id="banner">- Banner</a></li>
+                                    <li><a href="@Url.Action("IndexFixedBanner", "Banner")" id="fixed-banner">- Fixed Banner</a></li>
+                                </ul>
+                            </li>*@
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </nav>
+
+            <main role="main" class="col-xl-12 main">
+                <div class="content">
+                    @RenderBody()
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <div class="modal fade" id="insertImg" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add Image</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="select" class=" form-control-label mb-0 line-h">Thumbnail<span class="text-danger">*</span></label>
+                        <div>
+                            <div class="div-file-upload">
+                                <label class="btn btn-secondary mb-0" for="FileImageModal">
+                                    <input class="input-file-upload d-none" id="FileImageModal" name="FileImageModal" type="file" accept="image/*" value="">
+                                    <span class="font-weight-bold">Choose file</span>
+                                </label>
+
+                                <span class="file-name-modal ml-0 ml-md-3 filename"></span>
+                                <input type="hidden" name="thumbnailmodal" id="thumbnailmodal" class="thumbnail" value="" required />
+                            </div>
+                            <input type="hidden" name="name" id="pictureModal" value="" />
+                            <div class="preview-upload mt-3 d-none" id="preview-upload-modal"></div>
+                            <span class="text-secondary img-condition"><span class="text-danger">*</span>ขนาดไฟล์ต้องไม่เกิน 10 MB และต้องเป็นสกุลไฟล์ .jpg , .jpeg, .png เท่านั้น</span>
+                            <p class="text-danger" id="thumbnailmodal_error"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="btn-close-modal" onclick="clearModal()" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" id="btn-save-modal" class="btn btn-primary" disabled>Add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/popper.min.js"></script>
+    <script src="~/lib/bootstrap4/js/bootstrap.min.js"></script>
+    <script src="~/lib/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.js"></script>
+    <script src="~/lib/moment.js/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/js/validate-form.min.js"></script>
+    <script src="~/lib/js-cookie/js.cookie.min.js"></script>
+    <script src="~/lib/vue/vue.min.js"></script>
+    <script src="~/js/loginSession.js"></script>
+    <script src="~/js/site.min.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

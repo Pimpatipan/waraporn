@@ -1,0 +1,47 @@
+﻿@using WarapornSalapao.Resources;
+
+<div class="content-box" id="app">
+    <div class="row no-gutters info-main-box">
+        <div class="col-md-4" v-for="item in info">
+            <a :href="item.link" class="text-white test" target="_blank" :id="'section-'+item.id" onClick="goProductPage(this.id)">
+                <div class="info-box mb-md-3">
+                    <div class="row no-gutters">
+                        <div class="col-6 col-md-12 flex-mobile">
+                            <div v-bind:style="{'background-image':'url(\''+item.imgUrl+'\')'}" class="info-img "></div>
+                        </div>
+                        <div class="col-6 col-md-12">
+                            <div class="text-center info-desc">
+                                <div>
+                                    {{item.name}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            var vueJs = new Vue({
+                el: "#app",
+                data: {
+                    info: [
+                        { id: '1', name: 'วิธีอุ่นซาลาเปา', imgUrl: 'images/Info/info-1.jpg', link: '/blog/detail/การอุ่น' },
+                        { id: '2', name: 'สัญลักษณ์ไส้ซาลาเปา', imgUrl: 'images/Info/info-2.jpg', link: '/Product' },
+                        { id: '3', name: 'ข้อมูลสำหรับผู้แพ้อาหาร', imgUrl: 'images/Info/info-3.jpg', link: '/blog/detail/ข้อมูลสำหรับผู้แพ้อาหาร' },
+                        { id: '4', name: 'สาขา', imgUrl: 'images/Info/info-4.jpg', link: '/Branch'},
+                        { id: '5', name: 'รายการอาหาร', imgUrl: 'images/Info/info-5.jpg', link: '/Product'}
+                    ]
+                }
+            })
+        });
+
+        function goProductPage(id) {
+            if (id == "section-5" || id == "section-2") Cookies.set('MenuId', 0);
+        }
+    </script>
+}

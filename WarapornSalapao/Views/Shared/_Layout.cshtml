@@ -1,0 +1,192 @@
+﻿@using WarapornSalapao.Resources;
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-153863960-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-153863960-1');
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+        }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PPRTVQ4');</script>
+    <!-- End Google Tag Manager -->
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="ทุกวันหลังเลิกเรียนคุณแม่วราภรณ์ เห็นลูกๆ ชอบซื้อชาลาเปามากิน คุณแม่จึงคิดว่าทำให้ลูกๆ กินเองด้วยสูตรของครอบครัว ซึ่งทั้งอร่อยและสามารถมั่นใจในคุณภาพ">
+    <title>วราภรณ์ ซาลาเปา</title>
+    <meta property="og:title" content="วราภรณ์ ซาลาเปา" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://warapornsalapao.com/" />
+    <meta property="og:image" content="http://warapornsalapao.com/images/Banner/banner-1.jpg" />
+    <meta property="og:description" content="ทุกวันหลังเลิกเรียนคุณแม่วราภรณ์ เห็นลูกๆ ชอบซื้อชาลาเปามากิน คุณแม่จึงคิดว่าทำให้ลูกๆ กินเองด้วยสูตรของครอบครัว ซึ่งทั้งอร่อยและสามารถมั่นใจในคุณภาพ" />
+    <script type="application/ld+json">
+        {
+        "@@context": "https://schema.org",
+        "@@type": "Organization",
+        "url": "http://warapornsalapao.com/",
+        "name": "Waraporn Salapao",
+        "contactPoint": {
+        "@@type": "ContactPoint",
+        "telephone": "02-281-5694-5",
+        "contactType": "Customer service"
+        }
+        }
+    </script>
+    <link rel="shortcut icon" type="image/png" href="~/images/Home/favicon.ico" />
+    <link rel="canonical" href="http://warapornsalapao.com/" />
+    <environment include="Development">
+        <link href="~/lib/bootstrap4/css/bootstrap.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+        <link rel="stylesheet" type="text/css" href="~/css/main.css" />
+        <link href="~/css/slick.css" rel="stylesheet" />
+        <link href="~/css/slick-theme.css" rel="stylesheet" />
+        <link href="~/lib/font-awesome/css/all.min.css" rel="stylesheet" />
+    </environment>
+    <environment exclude="Development">
+        <link href="~/lib/bootstrap4/css/bootstrap.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/main.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/slick.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/slick-theme.css" asp-append-version="true" />
+        <link href="~/lib/font-awesome/css/all.min.css" rel="stylesheet" />
+    </environment>
+</head>
+<body>
+    <div class="mainBg"></div>
+    <nav class="navbar container-box nav-header navbar-expand-lg">
+        <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand" title="Home"></a>
+        <div class="d-flex">
+            <div class="dropdown d-block d-lg-none">
+                <button type="button" class="btn dropdown-toggle text-white btn-lang p-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    @(CultureHelper.GetCulture())
+                </button>
+                <div class="dropdown-menu dropdown-menu-right language-dropdown">
+                    <a href="@Url.Action("Set", "Language", new { culture = "th", returnUrl = this.Context.Request.Path})" class="dropdown-item" id="TH" title="TH">TH</a>
+                    <a href="@Url.Action("Set", "Language", new { culture = "en", returnUrl = this.Context.Request.Path})" class="dropdown-item" id="EN" title="EN">EN</a>
+                </div>
+            </div>
+            <button class="navbar-toggler p-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="text-white mx-3"><i class="fas fa-bars hamburger"></i></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse" id="navbarSupportedContent">
+            <ul class="nav navbar-nav">
+                <li class="nav-item"><a asp-area="" asp-controller="Home" asp-action="Index" id="home-page" title="@SharedResource.GetValue("menu-home")">@SharedResource.GetValue("menu-home")</a></li>
+                <li class="nav-item"><a asp-area="" asp-controller="Product" asp-action="Index" id="product-page" class="product-menu" title="@SharedResource.GetValue("menu-product")">@SharedResource.GetValue("menu-product")</a></li>
+                <li class="nav-item"><a asp-area="" asp-controller="Service" asp-action="Index" id="service-page" title="@SharedResource.GetValue("menu-service")">@SharedResource.GetValue("menu-service")</a></li>
+                <li class="nav-item"><a asp-area="" asp-controller="Branch" asp-action="Index" id="branch-page" title="@SharedResource.GetValue("menu-branch")">@SharedResource.GetValue("menu-branch")</a></li>
+                <li class="nav-item"><a asp-area="" asp-controller="Blog" asp-action="Index" id="blog-page" title="@SharedResource.GetValue("menu-blog")">@SharedResource.GetValue("menu-blog")</a></li>
+                <li class="nav-item"><a asp-area="" asp-controller="Contact" asp-action="Index" id="contact-page" title="@SharedResource.GetValue("menu-contact")">@SharedResource.GetValue("menu-contact")</a></li>
+                <div class="social-menu">
+                    <li class="nav-item"><a target="_blank" href="https://www.facebook.com/warapornsalapao.th" title="facebook"><i class="fab fa-facebook-f text-white" title="facebook"></i></a></li>
+                    <div class="dropdown d-none d-lg-block">
+                        <button type="button" class="btn dropdown-toggle text-white btn-lang pt-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            @(CultureHelper.GetCulture())
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right language-dropdown">
+                            <a href="@Url.Action("Set", "Language", new { culture = "th", returnUrl = this.Context.Request.Path +  this.Context.Request.QueryString.Value})" class="dropdown-item" id="TH" title="TH">TH</a>
+                            <a href="@Url.Action("Set", "Language", new { culture = "en", returnUrl = this.Context.Request.Path +  this.Context.Request.QueryString.Value})" class="dropdown-item" id="EN" title="EN">EN</a>
+                        </div>
+                    </div>
+                </div>
+            </ul>
+        </div>
+    </nav>
+
+    @*<partial name="_CookieConsentPartial" />*@
+
+    <div class="container-box">
+        @RenderBody()
+    </div>
+
+    <footer class="container-box footer">
+        <ul class="nav navbar-nav flex-row justify-content-center">
+            <li class="nav-item"><a asp-area="" asp-controller="Home" asp-action="Index" id="home-page" title="@SharedResource.GetValue("menu-home")">@SharedResource.GetValue("menu-home")</a></li>
+            <li class="nav-item"><a asp-area="" asp-controller="Product" asp-action="Index" id="product-page" class="product-menu" title="@SharedResource.GetValue("menu-product")">@SharedResource.GetValue("menu-product")</a></li>
+            <li class="nav-item"><a asp-area="" asp-controller="Service" asp-action="Index" id="service-page" title="@SharedResource.GetValue("menu-service")">@SharedResource.GetValue("menu-service")</a></li>
+            <li class="nav-item"><a asp-area="" asp-controller="Branch" asp-action="Index" id="branch-page" title="@SharedResource.GetValue("menu-branch")">@SharedResource.GetValue("menu-branch")</a></li>
+            <li class="nav-item"><a asp-area="" asp-controller="Blog" asp-action="Index" id="blog-page" title="@SharedResource.GetValue("menu-blog")">@SharedResource.GetValue("menu-blog")</a></li>
+            <li class="nav-item"><a asp-area="" asp-controller="Contact" asp-action="Index" id="contact-page" title="@SharedResource.GetValue("menu-contact")">@SharedResource.GetValue("menu-contact")</a></li>
+            <div class="social-menu">
+                <div class="dropdown">
+                    <button type="button" class="btn dropdown-toggle text-white mt-1 btn-lang" id="lang-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        @(CultureHelper.GetCulture())
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right language-dropdown">
+                        <a href="?culture=th" class="dropdown-item" id="TH" title="TH">TH</a>
+                        <a href="?culture=en" class="dropdown-item" id="EN" title="EN">EN</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex w-100 justify-content-center logo-box py-2">
+                <div><a target="_blank" href="https://www.facebook.com/warapornsalapao.th" title="facebook"><i class="fab fa-facebook text-white" id="fb-footer" title="facebook"></i></a></div>
+                <div class="px-3">|</div>
+                <div>
+                    <a href="/blog/detail/ข้อมูลสำหรับผู้แพ้อาหาร" class="text-white" target="_blank">
+                        <img src="~/images/drug-allergy-logo.png" class="drug-allergy-logo" />
+                        <span class="pl-1 link-more" id="drug-allergy-link">ข้อมูลสำหรับผู้แพ้อาหาร</span>
+                    </a>
+                </div>
+            </div>
+
+            <p>Copyright @@ 2019 Waraporn Sompong Foods Co.,Ltd.</p>
+        </ul>
+    </footer>
+
+    <div class="modal fade" tabindex="-1" role="dialog" id="landing-modal">
+        <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" id="close" data-dismiss="modal" aria-label="Close">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body py-0">
+                    <div class="modal-img" style="background-image:url('../images/Pop-Up ปรับการให้บริการ 02.jpg')"></div>
+                    <div class="modal-txt-box px-sm-3 pt-3">
+                        <h2 class="font-weight-bold f-24">สาขาที่ปิดให้บริการก่อน 20.00 น.</h2>
+                        <ul>
+                            <li>สาขานางเลิ้ง ปิดให้บริการ 18.00 น.</li>
+                            <li>สาขาเมโทรมอลล์ ปิดให้บริการ 19.00 น.</li>
+                            <li>สาขาโรงพยาบาลจุฬาลงกรณ์ ปิดให้บริการ 19.00 น</li>
+                            <li>สาขาโลตัสศรีนครินทร์ ปิดให้บริการ 19.30 น.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="javascript:" id="return-to-top" title="gotop"><i class="fas fa-chevron-up"></i></a>
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/popper.min.js"></script>
+    <script src="~/lib/bootstrap4/js/bootstrap.min.js"></script>
+    <script src="~/lib/vue/vue.min.js"></script>
+    <script src="~/js/slick.min.js"></script>
+    <script src="~/js/js.cookie.min.js"></script>
+    <script src="~/js/site.min.js"></script>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPRTVQ4"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

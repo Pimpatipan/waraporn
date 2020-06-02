@@ -1,0 +1,72 @@
+﻿@using WarapornSalapao.Resources;
+
+<div class="banner-box" id="banner-box" bannerId="2">
+    <div class="banner-placeholder">
+        <img src="~/images/Home/loading.gif" />
+    </div>
+    <div v-for="item in banner">
+        <div class="banner lazy-bg-img" v-bind:style="{'background-image':'url(\''+item.imgUrl+'\')'}" :title="item.altTag"></div>
+    </div>
+</div>
+
+<div class="content-box">
+    <div class="delivery-main-box">
+        <h1 class="header-box m-0">@SharedResource.GetValue("delivery-service")</h1>
+        <div class="list-branch" id="delivery-box">
+            <div class="row m-0 font-20">
+                <div class="col-sm-6 col-md-4 mb-3" v-for="item in deliverys">
+                    <p class="m-0 d-flex"><i class="fas fa-home pt-1 delivery-txt-7"></i>@SharedResource.GetValue("menu-branch") : {{item.name}}</p>
+                    <p class="m-0 d-flex"><i class="fas fa-phone pt-1 delivery-txt-10"></i>@SharedResource.GetValue("tel") {{item.telephone}}</p>
+                    <p class="mb-0 delivery-txt">@SharedResource.GetValue("opening-hours") {{item.timeService}} @SharedResource.GetValue("time")</p>
+                    <p class="mb-0 delivery-txt"><i class="fas fa-map-marker-alt text-danger pr-1"></i><a :href="item.googleMap" class="text-white" target="_blank" title="ดูแผนที่">@SharedResource.GetValue("see-map")</a></p>
+                </div>
+            </div>
+            <div class="text-center text-white mt-3" id="snackboxs">@SharedResource.GetValue("no-area")</div>
+        </div>
+    </div>
+
+    <div class="header-box">@SharedResource.GetValue("snackbox")</div>
+    <div class="row no-gutters content-boxs">
+        <div class="col-lg-6 px-5">
+            <img src="~/images/Service/set-menu.jpg" class="w-100" alt="set-menu" />
+        </div>
+        <div class="col-lg-6 px-5 pt-5 pt-lg-0">
+            <h2 class="header">
+                @SharedResource.GetValue("snackbox-text")
+            </h2>
+            <h2 class="header"> @SharedResource.GetValue("popular-set")</h2>
+            <ol class="pl-3">
+                <li>@SharedResource.GetValue("snackbox-desc-1")</li>
+                <li>@SharedResource.GetValue("snackbox-desc-2")</li>
+                <li>@SharedResource.GetValue("snackbox-desc-3")</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="header-box" id="catering">@SharedResource.GetValue("catering-header")</div>
+    <div class="party-box">
+        <div class="row no-gutters content-boxs">
+            <div class="col-lg-4 px-5 py-0 my-3">
+                <img src="~/images/Service/party-1.jpg" class="w-100" alt="@SharedResource.GetValue("catering-desc-1")" />
+                <p class="my-3 party-text">@SharedResource.GetValue("catering-desc-1")</p>
+            </div>
+            <div class="col-lg-4 px-5 py-0 my-3">
+                <img src="~/images/Service/party-2.jpg" class="w-100" alt="@SharedResource.GetValue("catering-desc-2")" />
+                <p class="my-3 party-text">@SharedResource.GetValue("catering-desc-2")</p>
+            </div>
+            <div class="col-lg-4 px-5 py-0 my-3">
+                <img src="~/images/Service/party-3.jpg" class="w-100" alt="@SharedResource.GetValue("catering-desc-3")" />
+                <p class="my-3 party-text content-text">@SharedResource.GetValue("catering-desc-3")</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $('#service-page').addClass('active');
+        });
+    </script>
+    <script src="~/js/service.js"></script>
+}

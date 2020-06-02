@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="catering-desc-1" xml:space="preserve">
+    <value>บริการในพื้นที่กรุงเทพและปริมณฑลเท่านั้น</value>
+  </data>
+  <data name="catering-desc-2" xml:space="preserve">
+    <value>สั่งสินค้า 25,000 บาทขึ้นไป</value>
+  </data>
+  <data name="catering-desc-3" xml:space="preserve">
+    <value>เมนูที่ให้บริการ
+ซาลาเปา 10 ไส้ / ขนมจีบ 5 อย่าง (หมู กุ้ง ปู ฮะเก๋า สาหร่าย)</value>
+  </data>
+  <data name="catering-header" xml:space="preserve">
+    <value>การจัดเลี้ยง</value>
+  </data>
+  <data name="coffee" xml:space="preserve">
+    <value>กาแฟ</value>
+  </data>
+  <data name="company-address" xml:space="preserve">
+    <value>เลขที่ 524/3 ถนน นครสวรรค์ แขวงสี่แยกมหานาค เขตดุสิต กรุงเทพมหานคร 10300
+สำนักงานใหญ่ : 02-281-5694-5
+Fax : 02-629-8998
+ลูกค้าสัมพันธ์ : 086-342-2928
+E-mail : info@warapornsalapao.com</value>
+  </data>
+  <data name="company-desc" xml:space="preserve">
+    <value>แนะนำ ติชมบริการ
+ได้ที่ฝ่ายลูกค้าสัมฟันธ์ 
+โทร 086-342-2928</value>
+  </data>
+  <data name="company-name" xml:space="preserve">
+    <value>บริษัท วราภรณ์ สมพงษ์ ฟู้ดส์ จำกัด (สำนักงานใหญ่)</value>
+  </data>
+  <data name="delivery" xml:space="preserve">
+    <value>บริการจัดส่ง</value>
+  </data>
+  <data name="delivery-service" xml:space="preserve">
+    <value>สาขาบริการจัดส่ง</value>
+  </data>
+  <data name="dim-sum" xml:space="preserve">
+    <value>ติ่มซำ</value>
+  </data>
+  <data name="district" xml:space="preserve">
+    <value>เขต/อำเภอ</value>
+  </data>
+  <data name="drink" xml:space="preserve">
+    <value>เครื่องดื่ม</value>
+  </data>
+  <data name="mantou" xml:space="preserve">
+    <value>ชุดหมั่นโถว</value>
+  </data>
+  <data name="mantou-burger" xml:space="preserve">
+    <value>หมั่นโถวมินิเบอร์เกอร์</value>
+  </data>
+  <data name="menu-blog" xml:space="preserve">
+    <value>Tips &amp; Tricks</value>
+  </data>
+  <data name="menu-branch" xml:space="preserve">
+    <value>สาขา</value>
+  </data>
+  <data name="menu-contact" xml:space="preserve">
+    <value>ติดต่อเรา</value>
+  </data>
+  <data name="menu-home" xml:space="preserve">
+    <value>หน้าแรก</value>
+  </data>
+  <data name="menu-info" xml:space="preserve">
+    <value>ข้อมูล</value>
+    <comment>-</comment>
+  </data>
+  <data name="menu-product" xml:space="preserve">
+    <value>สินค้า</value>
+  </data>
+  <data name="menu-service" xml:space="preserve">
+    <value>บริการ</value>
+  </data>
+  <data name="news" xml:space="preserve">
+    <value>ข่าวสาร</value>
+  </data>
+  <data name="no-area" xml:space="preserve">
+    <value>*ยอดสั่งขั้นต่ำ 350 บาท ไม่จำกัดพื้นที่ในการจัดส่ง คิดค่าบริการจัดส่งตามระยะทาง</value>
+  </data>
+  <data name="opening-hours" xml:space="preserve">
+    <value>เวลาทำการ</value>
+  </data>
+  <data name="popular-set" xml:space="preserve">
+    <value>เซ็ตยอดนิยม</value>
+  </data>
+  <data name="product" xml:space="preserve">
+    <value>สินค้า</value>
+  </data>
+  <data name="profile-desc" xml:space="preserve">
+    <value>ทุกวันหลังเลิกเรียนคุณแม่วราภรณ์ เห็นลูกๆ ชอบซื้อซาลาเปามากิน คุณแม่จึงคิดว่าทำให้ลูกๆ กินเองด้วยสูตรของครอบครัว ซึ่งทั้งอร่อยและสามารถมั่นใจในคุณภาพ
+
+จากที่แค่ทำให้ลูกๆ กินเอง ก็กลายมาเป็นทำขาย เริ่มจากธุรกิจเล็กๆ แต่ด้วยคุณภาพของไส้ ที่เลือกใช้วัตถุดิบอย่างดีและความอร่อยถูกปาก ซาลาเปาของคุณแม่ จึงกลายเป็นที่ชื่นชอบ
+
+จากร้านเก่าแก่ย่านนางเลิ้ง สู่ร้านวราภรณ์หลายสาขาทั่วกรุงเทพ ในที่สุดซาลาเปาวราภรณ์ ก็กลายเป็นตัวแทนของซาลาเปา ที่มีแป้งนุ่ม รสชาติกลมกล่อม กลิ่นหอมน่ากิน มีไส้หลากหลายให้เลือก จัดเต็มด้วยส่วนผสมชั้นดี ไม่ใส่สารกันบูด แต่ยังใส่ใจในทุกขั้นตอนการปรุง เหมือนทำให้คนในครอบครัว
+
+เติมเต็มชีวิตประจำวัน อย่างมีคุณภาพแบบ
+" อิ่มง่าย..ง่าย อร่อยนุ่ม..นุ่ม "</value>
+  </data>
+  <data name="profile-header" xml:space="preserve">
+    <value>จัดเต็มแบบคุณแม่วราภรณ์</value>
+  </data>
+  <data name="province" xml:space="preserve">
+    <value>จังหวัด</value>
+  </data>
+  <data name="read-more" xml:space="preserve">
+    <value>อ่านต่อที่นี่</value>
+  </data>
+  <data name="recent-blog" xml:space="preserve">
+    <value>บทความล่าสุด</value>
+  </data>
+  <data name="salapao" xml:space="preserve">
+    <value>ซาลาเปา</value>
+  </data>
+  <data name="search" xml:space="preserve">
+    <value>ค้นหา</value>
+  </data>
+  <data name="section-desc-1" xml:space="preserve">
+    <value>เมนูที่หลากหลายของวราภรณ์ ซาลาเปา มีเคล็ดลับความอร่อยด้วยการเลือกใช้วัตถุดิบ ครบเครื่องอย่างดี ไม่ใส่สารกันบูด</value>
+  </data>
+  <data name="section-desc-2" xml:space="preserve">
+    <value>ซาลาเปาทุกลูกปั้นด้วยมืออย่างประณีต เอาใจใส่ในทุกขั้นตอนการปรุงเหมือนอาหารที่คุณแม่ตั้งใจทำให้ลูกๆ</value>
+  </data>
+  <data name="section-desc-3" xml:space="preserve">
+    <value>วราภรณ์ ซาลาเปาจัดเต็มด้วยไส้เน้นๆ แป้งนุ่ม อร่อยเต็มๆ คำ</value>
+  </data>
+  <data name="section-header-1" xml:space="preserve">
+    <value>คัดสรร</value>
+  </data>
+  <data name="section-header-2" xml:space="preserve">
+    <value>พิถีพิถัน</value>
+  </data>
+  <data name="section-header-3" xml:space="preserve">
+    <value>จัดเต็ม</value>
+  </data>
+  <data name="see-map" xml:space="preserve">
+    <value>ดูแผนที่</value>
+  </data>
+  <data name="see-menu" xml:space="preserve">
+    <value>ดูเมนู</value>
+  </data>
+  <data name="see-more" xml:space="preserve">
+    <value>ดูเพิ่มเติม</value>
+  </data>
+  <data name="single-dish" xml:space="preserve">
+    <value>อาหารจานเดียว</value>
+  </data>
+  <data name="snackbox" xml:space="preserve">
+    <value>สแน็คบ็อกซ์</value>
+  </data>
+  <data name="snackbox-desc" xml:space="preserve">
+    <value>1. ชาลาเปา 1 ลูก + ขนมจีบ 1 ชุด
+2. ชาลาเปา 2 ลูก
+3. ซาลาเป่า 1 ลูก</value>
+  </data>
+  <data name="snackbox-desc-1" xml:space="preserve">
+    <value>ชาลาเปา 1 ลูก + ขนมจีบ 1 ชุด</value>
+  </data>
+  <data name="snackbox-desc-2" xml:space="preserve">
+    <value>ชาลาเปา 2 ลูก</value>
+  </data>
+  <data name="snackbox-desc-3" xml:space="preserve">
+    <value>ชาลาเปา 1 ลูก</value>
+  </data>
+  <data name="snackbox-text" xml:space="preserve">
+    <value>สามารถจัดสินค้าตามจำนวนที่ลูกค้าต้องการ
+คิดราคาตามราคาสินค้า (ไม่มีเครื่องดื่ม)</value>
+  </data>
+  <data name="subdistrict" xml:space="preserve">
+    <value>แขวง/ตำบล</value>
+  </data>
+  <data name="tel" xml:space="preserve">
+    <value>โทร. :</value>
+  </data>
+  <data name="time" xml:space="preserve">
+    <value>น.</value>
+  </data>
+  <data name="waraporn-fb" xml:space="preserve">
+    <value>Facebook : วราภรณ์ ชาลาเปา</value>
+  </data>
+</root>
